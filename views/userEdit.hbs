@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.name}}</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/userEdit.css">
+</head>
+<body>
+    {{#if user}}
+    {{>dashboard}}
+    {{else}}
+    {{>header}}
+    {{/if}}
+    <div class="container-fluid">
+        <div style="margin-top:14%" class="d-flex justify-content-center">
+            <form action="/user/edit?_method=PATCH" method="post">
+                <div class="formation">
+                <label class="labels" for="Name">Name</label>
+                <br>
+                <input class="inputs" type="text" value="{{user.name}}" name="name" placeholder="Name" id="">
+                <br>
+                <label class="labels" for="Name">E-Mail</label>
+                <br>
+                <input class="inputs" type="email" value="{{user.email}}" name="email" placeholder="E-Mail" id="">
+                <input class="btn-outline-warning update" type="submit" value="Update">
+                <a href="/user/me"><input class="btn-outline-warning update" type="button" value="Cancel"></a>
+                
+                </div>
+                </form>
+        </div>
+    </div>
+    {{#if messages.info}}
+        <div style="margin: 1%;" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Denied! </strong>{{messages.info}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span style="font-weight: 700;" aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        {{/if}}
+</body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script  src="/js/function.js"></script>
+    <script src="https://use.fontawesome.com/ada434e0af.js"></script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MINDSPACE | Contacts</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img\favicon\apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img\favicon\apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img\favicon\apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img\favicon\apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img\favicon\apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img\favicon\apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img\favicon\apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img\favicon\apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img\favicon\apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img\favicon\android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img\favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img\favicon\favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img\favicon\favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap v3.3.7 -->
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+
+    <!-- Font Awesome 4.7.0 -->
+    <link rel="stylesheet" href="css\font-awesome.min.css">
+
+    <!-- Main style -->
+    <link rel="stylesheet" href="css\style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="wrapp-content">
+
+        <!-- Header -->
+        {{>header1}}
+
+        <!-- Content -->
+        <main class="content-row">
+            <div class="page-title-wrapp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="page-title-01">Contacts</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="breadcrumbs">
+                                <li class="active">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>Contacts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box-01 pad-bt-90">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="contacts-map-wrapp">
+                                <div class="contacts_map">
+                                    <div id="map-canvas"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="contacts-block-wrapp">
+                                <h6 class="subtitle-04">Get in touch</h6>
+                                <h3 class="title-02">Find Us on a
+                                    <span>Map</span>
+                                </h3>
+                                <div class="contacts-block-01">
+                                    <p>We have worls-class, flexible support via live chat, email and phone. We guarantee that you’ll be able to have any issue resolved within 24 hours. You van contact support immediately here.</p>
+                                </div>
+                                <p class="contact-location">455 Wallstreet St., NY, USA</p>
+                                <a class="contact-mail" href="maito:companyname@gmail.com">companyname@gmail.com</a>
+                                <p class="contact-phone">Call:
+                                    <span>800 326 9160</span>
+                                </p>
+                                <div class="reply-form">
+                                    <div role="form" class="form-in-wrapp" id="form-in-wrapp-f1053-p976-o1" lang="en-US" dir="ltr">
+                                        <div class="screen-reader-response"></div>
+                                        <div id="note"></div>
+                                        <div id="fields">
+                                            <form id="ajax-contact-form" action="javascript:void(0);" method="post" novalidate="novalidate" class="reply-form__form">
+                                                <div class="reply-form__box-01 name">
+                                                    <input class="reply-form__name form-in-wrapp-validates-as-required" type="text" name="name" aria-required="true" aria-invalid="false" placeholder="Name *">
+                                                </div>
+                                                <div class="reply-form__box-02 your-email">
+                                                    <input class="reply-form__email form-in-wrapp-validates-as-required form-in-wrapp-validates-as-email" type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Email *">
+                                                </div>
+                                                <div class="reply-form__box-03 your-message">
+                                                    <textarea class="reply-form__message" name="message" aria-invalid="false" cols="30" rows="10" placeholder="Message..."></textarea>
+                                                </div>
+                                                <div class="reply-form__box-04">
+                                                    <button class="btn-01" type="submit">Send message</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        {{>footer}}
+
+    </div>
+
+    <!-- JQuery v2.2.4 -->
+    <script src="js\jquery\jquery-2.2.4.min.js"></script>
+
+    <!-- Main navigation sticky -->
+    <script src="js\plugins\jquery.sticky.min.js"></script>
+
+    <!-- SuperFish v1.7.9 -->
+    <script src="js\plugins\jquery.superfish.min.js"></script>
+
+    <!-- Google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNm8iTBBSJr4h7dXOwqvw_8AbWIpw_sMo"></script>
+
+    <!-- Main script -->
+    <script src="js\main.js"></script>
+
+</body>
+
+</html>

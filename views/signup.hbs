@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  {{#if messages.info}}
+  <h1>{{messages.info}}</h1>
+  {{/if}}
+    <form autocomplete='off' onsubmit="return validate()" action="/signup" method="POST" class='form'>
+  <div class='control'>
+    <h1>
+      Sign Up
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='name' required id="name" placeholder='Name' type='text'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='email' id="email" placeholder='E mail' type="email">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='password' required id="password" placeholder='Password' type='password'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <div class='form-input blck'>
+    <label style="color: white;" for="">Are you a Doctor ?</label>
+    <br>
+    <input type="radio" value="true" name="isDoctor" id="">Yes
+    <input type="radio" value="false" name="isDoctor" id="">No
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Sign Up
+    </div>
+  </button>
+  <br>
+  <br>
+  <br>
+  <a style="text-decoration: none;" href="/login">
+  <button class='btn block-cube block-cube-hover' type="button" >
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Already Have An Account, Login Here
+    </div>
+  </button></a>
+</form>
+</body>
+<script src="/js/signup.js"></script>
+</html>

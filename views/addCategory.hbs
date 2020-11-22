@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="/css/addBlog.css">
+</head>
+<body class="dark">
+    {{>dashboard}}
+    <div class="container-fluid" >
+    {{#if message }}
+  	<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success! </strong>{{message}} 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span style="font-weight: 700;" aria-hidden="true">&times;</span>
+            </button>
+            </div>
+	  {{/if}}
+    <form action="/addCategory" onsubmit="return validate()" method="post">
+		<input type="text" oninput="validate()" required name="category" class="label-input" placeholder="Please Enter Category Here" id="category">
+        <button class="label-button" type="submit">Add Category</button>
+    </form>
+     </div>
+</body>
+<script src="/js/function.js"></script>
+<script src="https://use.fontawesome.com/ada434e0af.js"></script>
+<script>
+    const validate=()=>{
+        const category=document.getElementById('category').value
+        if(category.match(/[\;\/\?\:\@\=\&\"\<\>\#\%\{\}\|\\\^\~\[\]\`\$\.\+\*\'\(\)\,\,]/))
+        {
+            alert("Following Characters are Reserved and not allowed for use: ; / ? : @ = & \" < > # % { } | \\ ^ ~ [ ] ` $ . + * ' ( ) , , ")
+            return false
+        }
+    }
+</script>
+</html>

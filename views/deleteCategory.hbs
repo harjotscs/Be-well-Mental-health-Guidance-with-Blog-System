@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Category</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="/css/addBlog.css">
+</head>
+<body class="dark">
+    {{>dashboard}}
+    <div style="margin-top:6%" class="container-fluid" >
+    {{#each categories}}
+		<div class="alert alert-success" >
+            <strong> {{category}} </strong> 
+    <a class="alert-link" href="/deleteCategory/{{_id}}"><button type="submit" onclick="alert("ji")" class="close"  aria-label="Close">
+   <span aria-hidden="true"><i class="fa fa-trash" aria-hidden="true" style="color:rgb(255, 5, 5);" ></i></span>
+  </button></a>
+</div>
+{{/each}}
+
+   {{#if message }}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{message}} </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span style="font-weight: 700;" aria-hidden="true">&times;</span>
+            </button>
+            </div>
+	  {{/if}}
+    </div>
+</body>
+<script src="/js/function.js"></script>
+<script src="https://use.fontawesome.com/ada434e0af.js"></script>
+</html>

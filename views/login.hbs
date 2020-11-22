@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  {{#if messages.error}}
+  <center><p>{{messages.error}}</p></center>
+  {{/if}}
+    <form autocomplete='off' onsubmit="return validate()" action="/login" method="POST" class='form'>
+  <div class='control'>
+    <h1>
+      Log In
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='email' id="email" placeholder='E mail' type='text'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='password' id="password" placeholder='Password' type='password'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Log In
+    </div>
+  </button>
+  <br>
+  <a style="color:cyan" href="/user/forgot"><div class='text'>
+      Forgot Password
+    </div></a>
+  
+  <br>
+  <br>
+  <a style="text-decoration: none;" href="/signup">
+  <button class='btn block-cube block-cube-hover' type="button" >
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Don't Have An Account Sign Up Here
+    </div>
+  </button></a>
+</form>
+</body>
+<script src="/js/signup.js"></script>
+</html>

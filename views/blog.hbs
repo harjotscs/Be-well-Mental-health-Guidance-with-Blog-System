@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+   <link rel="stylesheet" href="/css/blog.css">
+   
+   <style>
+     body, html {
+	font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 16px;
+	line-height: 1.5;
+}
+       .page-item.clicked .page-link{
+           z-index: 1;
+    color: #fff;
+    background-color: #1F2029;
+    border-color: rgb(255, 255, 255);
+       }
+       button:hover{
+         cursor: pointer;
+       }
+
+   </style>
+</head>
+<body>
+    <body class="hero-anime">
+        {{#if user}}	
+        {{>dashboard}}
+        {{else}}
+        {{>header}}
+        {{/if}}
+        
+        <div class="container-fluid" > 
+            {{#if message}}
+            <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span style="font-weight: 700;" aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {{/if}}
+
+          {{#if user}}
+            {{#each posts}}
+            <div onclick="window.location='/blog/{{_id}}'" class="flip">
+                <div class="flip">
+                    <div class="front" style="background-image:url(data:image/jpeg;base64,{{image}})">
+                       <h1 class="text-shadow">{{title}}</h1>
+                       <h3>{{category}}</h3>
+                    </div>
+                    <div class="back">
+                       <h2>{{title}}</h2>
+                       <p style="overflow: hidden;" > Click To Know More {{{content}}} </p>
+                    </div>
+                </div>
+                <a href="/edit/{{_id}}"><button class="btn btn-outline-primary float-left">Edit</button></a>
+                <a href="/delete/{{_id}}"><button class="btn btn-outline-danger float-right ">Delete</button></a>
+            </div>
+            {{/each}}
+            {{else}}
+            {{#each posts}}
+
+            <div onclick="window.location='/blog/{{_id}}'" class="flip">
+                <div class="flip">
+                    <div class="front" style="background-image:url(data:image/jpg;base64,{{image}})">
+                       <h1 class="text-shadow">{{title}}</h1>
+                       <h3>{{category}}</h3>
+                    </div>
+                    <div class="back">
+                       <h2>{{title}}</h2>
+                       <p style="overflow: hidden;" > Click To Know More {{{content}}} </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="my-5 py-5">
+        </div>
+    {{!-- <div class="pagination pagination-centered">
+  <ul>
+    {{#paginate pagination type="first"}}
+      <li {{#if disabled}}class="disabled"{{/if}}><a href="/blog?page={{n}}">First</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="previous"}}
+      <li {{#if disabled}}class="disabled"{{/if}}><a href="/blog?page={{n}}">Prev</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="middle" limit="7"}}
+      <li {{#if active}}class="active"{{/if}}><a href="/blog?page={{n}}">{{n}}</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="next"}}
+      <li {{#if disabled}}class="disabled"{{/if}}><a href="/blog?page={{n}}">Next</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="last"}}
+      <li {{#if disabled}}class="disabled"{{/if}}><a href="/blog?page={{n}}">Last</a></li>
+    {{/paginate}}
+  </ul>
+</div> --}}
+{{#if pagination}}
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+      {{#paginate pagination type="previous"}}
+    <li class="page-item">
+      <a class="page-link" href="{{append}}?page={{n}}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {{/paginate}}
+    {{#paginate pagination type="middle" limit="7"}}
+    <li class="page-item" id="page{{n}}" ><a class="page-link" href="{{#if append}}{{append}}page={{n}}{{else}}?page={{n}}{{/if}}">{{n}}</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="next"}}
+    <li class="page-item">
+      <a class="page-link" href="{{append}}?page={{n}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {{/paginate}}
+  </ul>
+</nav>
+{{/if}}
+
+    </body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script  src="/js/function.js"></script>
+    <script src="https://use.fontawesome.com/ada434e0af.js"></script>
+</body>
+</html>
